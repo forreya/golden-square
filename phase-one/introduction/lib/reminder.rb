@@ -9,6 +9,7 @@ class Reminder
   end
 
   def remind()
+    fail "No reminder set!" if @task.nil?
     "#{@task}, #{@name}!"
   end
 end
