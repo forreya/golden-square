@@ -2,7 +2,7 @@
 require 'add_five'
 
 # describes the unit of code we are testing
-Rspec.describe "add_five method" do
+RSpec.describe "add_five method" do
   # describes the single test we are performing
   it "adds 5 to 3 and returns 8" do
     # run the method
