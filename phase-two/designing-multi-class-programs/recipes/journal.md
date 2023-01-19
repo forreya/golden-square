@@ -26,6 +26,7 @@
 
 Diagram made using asciiflow.com:
 
+```
                ┌────────────────────────────────────┐
                │Diary                               │
                │                                    │
@@ -59,6 +60,7 @@ Diagram made using asciiflow.com:
 │                        │      │                       │
 │                        │      │                       │
 └────────────────────────┘      └───────────────────────┘
+```
 
 ```ruby
 
