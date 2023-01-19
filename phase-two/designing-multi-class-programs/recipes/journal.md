@@ -25,39 +25,40 @@
 ## 2. Design the Class System
 
 Diagram made using asciiflow.com:
-                             ┌────────────────────────────────────┐
-                             │Diary                               │
-                             │                                    │
-                             │                                    │
-                             │- add(entry)                        │
-                             │- all_titles                        │
-                             │- read_entry(entry_title)           │
-                             │- find_best_entry(wpm, minutes)     │
-                             │- show_tasks                        │
-                             │- search_phone_numbers              │
-                             │                                    │
-                             │                                    │
-                             ├────────────────────────────────────┤
-                             │                                    │
-                             │                                    │
-                             │                                    │
-                             ▼                                    ▼
-                             │                                    │
-                             │                                    │
-                             │                                    │
-                             │                                    │
-┌────────────────────────────┴────────┐       ┌───────────────────┴───────────────────┐
-│Entry(title, contents)               │       │ToDo(task)                             │
-│                                     │       │                                       │
-│                                     │       │                                       │
-│- title                              │       │- show_task                            │
-│- contents                           │       │- mark_done!                           │
-│- count_words                        │       │- is_done?                             │
-│                                     │       │                                       │
-│                                     │       │                                       │
-│                                     │       │                                       │
-│                                     │       │                                       │
-└─────────────────────────────────────┘       └───────────────────────────────────────┘
+
+               ┌────────────────────────────────────┐
+               │Diary                               │
+               │                                    │
+               │                                    │
+               │- add(entry)                        │
+               │- all_titles                        │
+               │- read_entry(entry_title)           │
+               │- find_best_entry(wpm, minutes)     │
+               │- show_tasks                        │
+               │                                    │
+               │                                    │
+               │                                    │
+               ├────────────────────────────────────┤
+               │                                    │
+               │                                    │
+               │                                    │
+               ▼                                    ▼
+               │                                    │
+               │                                    │
+               │                                    │
+               │                                    │
+┌──────────────┴─────────┐      ┌───────────────────┴───┐
+│Entry(title, contents)  │      │ToDo(task)             │
+│                        │      │                       │
+│                        │      │                       │
+│- title                 │      │- show_task            │
+│- contents              │      │- mark_done!           │
+│- count_words           │      │- is_done?             │
+│                        │      │                       │
+│                        │      │                       │
+│                        │      │                       │
+│                        │      │                       │
+└────────────────────────┘      └───────────────────────┘
 
 ```ruby
 
