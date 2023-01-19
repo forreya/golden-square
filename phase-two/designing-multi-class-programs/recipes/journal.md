@@ -37,15 +37,9 @@ Diagram made using asciiflow.com:
                │- find_best_entry(wpm, minutes)     │
                │- show_tasks                        │
                │                                    │
-               │                                    │
-               │                                    │
                ├────────────────────────────────────┤
                │                                    │
-               │                                    │
-               │                                    │
                ▼                                    ▼
-               │                                    │
-               │                                    │
                │                                    │
                │                                    │
 ┌──────────────┴─────────┐      ┌───────────────────┴───┐
@@ -55,9 +49,6 @@ Diagram made using asciiflow.com:
 │- title                 │      │- show_task            │
 │- contents              │      │- mark_done!           │
 │- count_words           │      │- is_done?             │
-│                        │      │                       │
-│                        │      │                       │
-│                        │      │                       │
 │                        │      │                       │
 └────────────────────────┘      └───────────────────────┘
 ```
