@@ -14,8 +14,9 @@ describe Diary do
         expect(@diary.all_titles).to eq 'You have no entries currently.'
     end
 
-    # it 'adds entry to the diary and returns all the titles as an array' do
-    #     diary.add(entry_1)
-    #     diary.add(entry_2)
-    # end
+    it 'adds entry to the diary and returns all the titles as an array' do
+        @diary.add(@entry_1)
+        @diary.add(@entry_2)
+        expect(@diary.all_titles).to eq [@entry_1,@entry_2]
+    end
 end
