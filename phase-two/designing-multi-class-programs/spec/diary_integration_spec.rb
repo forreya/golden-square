@@ -19,4 +19,14 @@ describe Diary do
         @diary.add(@entry_2)
         expect(@diary.all_titles).to eq [@entry_1,@entry_2]
     end
+
+    it 'raises an error if the entry title does not exist' do
+        expect{@diary.read_entry(@entry_1.title)}.to raise_error 'This entry does not exist.'
+    end
+
+    it 'searches the title from the list and returns the entry content' do
+        @diary.add(@entry_1)
+        @diary.add(@entry_2)
+        expect(@diary.read_entry(@entry_1.title)).to eq'on this sunny morning, i went on a walk'
+    end
 end

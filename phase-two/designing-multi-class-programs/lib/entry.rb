@@ -4,4 +4,11 @@ class Entry
         @contents = contents
     end
 
+    def title
+        @title
+    end 
+
+    def contents
+        @contents
+    end 
 end
