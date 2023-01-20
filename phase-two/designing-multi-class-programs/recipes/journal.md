@@ -36,7 +36,7 @@ Diagram made using asciiflow.com:
                │- read_entry(entry_title)           │
                │- find_best_entry(wpm, minutes)     │
                │- show_tasks                        │
-               │                                    │
+               │- show_all_numbers                  │
                ├────────────────────────────────────┤
                │                                    │
                ▼                                    ▼
@@ -49,7 +49,7 @@ Diagram made using asciiflow.com:
 │- title                 │      │- show_task            │
 │- contents              │      │- mark_done!           │
 │- count_words           │      │- is_done?             │
-│                        │      │                       │
+│- show_numbers          │      │                       │
 └────────────────────────┘      └───────────────────────┘
 ```
 
@@ -89,7 +89,7 @@ class Diary
         # returns all the todo tasks as an array
     end
 
-    def search_phone_number
+    def show_all_numbers
         # returns all the phone numbers from the entries contents
     end
 
@@ -113,6 +113,10 @@ class Entry
 
   def count_words
     # returns total number of words in contents (an integer)
+  end
+
+  def show_numbers
+    # returns all the phone numbers from this entry
   end
 end
 
@@ -145,10 +149,12 @@ end
 # Diary x Entry
 
 # 1 
-entry = Entry.new('a poem','on this sunny morning, i went on a walk')
+entry1 = Entry.new('a poem','on this sunny morning, i went on a walk')
+entry2 = Entry.new('a song','on this raining night, i danced in the rain')
 diary = Diary.new()
-diary.add(entry)
-diary.all_titles() # => [entry]
+diary.add(entry1)
+diary.add(entry2)
+diary.all_titles() # => [entry1, entry2]
 
 # 2
 diary = Diary.new()
@@ -156,13 +162,16 @@ diary.all_titles() # => 'You have no entries currently.'
 
 # 3
 diary = Diary.new()
-fake_entry = 'non_existence'
-diary.read_entry(entry) # => 'This entry does not exist.'
+entry1 = Entry.new('a poem','on this sunny morning, i went on a walk')
+diary.read_entry(entry1.title) # => 'This entry does not exist.' (error message)
 
 # 4
 diary = Diary.new()
-diary.add(entry)
-diary.read_entry(entry) # => entry
+entry1 = Entry.new('a poem','on this sunny morning, i went on a walk')
+entry2 = Entry.new('a song','on this raining night, i danced in the rain')
+diary.add(entry1)
+diary.add(entry2)
+diary.read_entry(entry1) # => 'on this sunny morning, i went on a walk'
 
 # 5
 
@@ -181,11 +190,14 @@ diary.read_entry(entry) # => entry
 # Entry
 
 # 1 
-entry = Entry.new('a poem','on this sunny morning, i went on a walk')
+entry1 = Entry.new('a poem','on this sunny morning, i went on a walk')
 entry.title() # => 'a poem'
 
 # 2
-entry = Entry.new('a poem','on this sunny morning, i went on a walk')
+entry1 = Entry.new('a poem','on this sunny morning, i went on a walk')
 entry.contents() # => 'on this sunny morning, i went on a walk'
 
 ```
+
+## 5. Implement the Behaviour
+_After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour._
