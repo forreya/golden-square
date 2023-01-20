@@ -47,4 +47,14 @@ class Diary
         # to, but not over, the length that the user could read in the minutes they
         # have available given their reading speed.
     end
+
+    def show_all_numbers
+        all_numbers = []
+        @entries_list.each {
+            |entry|
+            all_numbers.push(entry.show_numbers)
+        }
+        all_number
+    end
+    
 end

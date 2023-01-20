@@ -181,10 +181,12 @@ diary.add(entry3)
 diary.add(entry4)
 diary.find_best_entry(1,5) # => entry1
 
+# 6
+diary = Diary.new()
+entry5 = Entry.new('a number','i went on a walk and found a phone number which was +44 638 816 2837')
+diary.show_all_numbers() # => [+44 638 816 2837]
 
 # Diary x ToDo
-
-# 1
 
 
 
@@ -207,6 +209,10 @@ entry.contents() # => 'on this sunny morning, i went on a walk'
 # 3
 entry1 = Entry.new('a poem','on this sunny morning, i went on a walk')
 entry.count_words() # => 9
+
+# 4
+entry5 = Entry.new('a number','i went on a walk and found a phone number which was +44 638 816 2837')
+entry5.show_numbers # => ['+44 638 816 2837']
 ```
 
 ## 5. Implement the Behaviour

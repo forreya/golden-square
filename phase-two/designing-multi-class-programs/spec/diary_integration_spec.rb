@@ -37,6 +37,12 @@ describe Diary do
         @diary.add(entry4)
         result = @diary.find_best_entry(1,5)
         expect(result).to eq entry3
-
     end
+
+    # it "returns an array of all the phone numbers found in every entry" do
+    #     entry5 = Entry.new('a number','i went on a walk and found a phone number which was +446388162837')
+    #     @diary.add(entry5)
+    #     result = @diary.show_all_numbers()
+    #     expect(result).to eq ['+446388162837']
+    # end
 end
