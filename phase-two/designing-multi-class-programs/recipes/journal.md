@@ -174,6 +174,13 @@ diary.add(entry2)
 diary.read_entry(entry1) # => 'on this sunny morning, i went on a walk'
 
 # 5
+diary = Diary.new()
+entry3 = Entry.new('a poem','i went on a walk')
+entry4 = Entry.new('a song','on this stormy rainy night, i danced in the rain')
+diary.add(entry3)
+diary.add(entry4)
+diary.find_best_entry(1,5) # => entry1
+
 
 # Diary x ToDo
 
@@ -197,6 +204,9 @@ entry.title() # => 'a poem'
 entry1 = Entry.new('a poem','on this sunny morning, i went on a walk')
 entry.contents() # => 'on this sunny morning, i went on a walk'
 
+# 3
+entry1 = Entry.new('a poem','on this sunny morning, i went on a walk')
+entry.count_words() # => 9
 ```
 
 ## 5. Implement the Behaviour

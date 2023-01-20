@@ -12,4 +12,8 @@ describe Entry do
     it 'returns contents' do
         expect(@entry.contents).to eq 'on this sunny morning, i went on a walk'
     end
+
+    it 'returns number of words in contents' do
+        expect(@entry.count_words).to eq 9
+    end
 end

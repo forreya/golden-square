@@ -11,4 +11,8 @@ class Entry
     def contents
         @contents
     end 
+
+    def count_words
+        @contents.split(" ").length
+    end
 end
