@@ -20,11 +20,11 @@ describe 'Todo list integration' do
         @task_1.mark_done!
         expect(@todo_list.complete).to eq [@task_1]
     end
-
+    
     it 'marks one task done and disappear from the incomplete list and returns the complete list' do
         @task_1.mark_done!
-        expect(@todo_list.complete).to eq [@task_1]
         expect(@todo_list.incomplete).to eq [@task_2,@task_3]
+        expect(@todo_list.complete).to eq [@task_1]
     end
 
     it 'marks all todos as complete and returns the complete list' do

@@ -137,3 +137,55 @@ class Todo
 end
 
 ```
+
+## 3. Create Examples as Integration Tests
+
+```ruby
+
+# Diary x Entry
+
+# 1 
+entry = Entry.new('a poem','on this sunny morning, i went on a walk')
+diary = Diary.new()
+diary.add(entry)
+diary.all_titles() # => [entry]
+
+# 2
+diary = Diary.new()
+diary.all_titles() # => 'You have no entries currently.'
+
+# 3
+diary = Diary.new()
+fake_entry = 'non_existence'
+diary.read_entry(entry) # => 'This entry does not exist.'
+
+# 4
+diary = Diary.new()
+diary.add(entry)
+diary.read_entry(entry) # => entry
+
+# 5
+
+# Diary x ToDo
+
+# 1
+
+
+
+```
+
+## 4. Create Examples as Unit Tests
+
+```ruby
+
+# Entry
+
+# 1 
+entry = Entry.new('a poem','on this sunny morning, i went on a walk')
+entry.title() # => 'a poem'
+
+# 2
+entry = Entry.new('a poem','on this sunny morning, i went on a walk')
+entry.contents() # => 'on this sunny morning, i went on a walk'
+
+```
