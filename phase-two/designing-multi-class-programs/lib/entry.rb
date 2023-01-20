@@ -2,6 +2,7 @@ class Entry
     def initialize(title,contents)
         @title = title
         @contents = contents
+        @phone_list = []
     end
 
     def title
@@ -17,8 +18,11 @@ class Entry
     end
 
     def show_numbers
-        numbers = @contents.scan(/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/)
-        # numbers = @contents.scan(/[+44]/)
-        numbers
+        # ^0([1-6][0-9]{8,10}|7[0-9]{9})$
+        regex = /^07[0-9]{9}$/ # 07 123456789
+        # result = @contents.scan(/\d{11}/)
+        result = @contents.scan(/(0[1-6][0-9]{8,10}|07[0-9]{9})/)
+        result.map {|item| @phone_list << item[0]}
+        return @phone_list
     end
 end

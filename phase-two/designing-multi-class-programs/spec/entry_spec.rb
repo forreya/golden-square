@@ -18,8 +18,8 @@ describe Entry do
     end
 
     it 'returns an array of all the phone numbers found in this entry' do
-        entry5 = Entry.new('a number','i went on a walk and found a phone number which was +447222555555')
-        expect(entry5.show_numbers).to eq ['+447222555555']
+        entry5 = Entry.new('a number','This is 07123456789. And Ryan 07123456710')
+        expect(entry5.show_numbers).to eq ['07123456789','07123456710']
     end
 end
 
