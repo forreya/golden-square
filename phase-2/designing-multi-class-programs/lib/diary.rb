@@ -1,10 +1,15 @@
 class Diary
     def initialize
         @entries_list = []
+        @tasks_list = []
     end
 
-    def add(entry)
-        @entries_list.push(entry)
+    def add(page)
+        if page.instance_of?(ToDo)
+            @tasks_list.push(page)
+        else
+            @entries_list.push(page)
+        end
     end
 
     def all_titles
@@ -22,6 +27,10 @@ class Diary
             end
         end
         fail 'This entry does not exist.'
+    end
+
+    def show_tasks
+        @tasks_list.select {|task| task.is_done? == false}
     end
 
     def find_best_entry(wpm, minutes)
@@ -49,6 +58,13 @@ class Diary
     end
 
     def show_all_numbers
+        all_phone_list = []
+        @entries_list.each do |entry|
+            all_phone_list << entry.show_numbers
+        end
+
+        all_phone_list.select {|item| item.length > 0}
+
         # all_numbers = []
         # @entries_list.each { # entry1, 5, 6
         #     |entry|
@@ -60,15 +76,19 @@ class Diary
         #     end
         # }
         # all_numbers
-        all_numbers = @entries_list.map { # entry1, 5, 6
-            |entry|
-            entry.show_numbers if !entry.show_numbers.empty?
-        }
+
+        # all_numbers = @entries_list.map { # entry1, 5, 6
+        #     |entry|
+        #     entry.show_numbers if !entry.show_numbers.empty?
+        # }
+
+        
+        
         # all_numbers = all_numbers.filter{
         #     |array|
         #     !array.empty?
         # }
-        all_numbers
+        # all_numbers
     end
     
 end

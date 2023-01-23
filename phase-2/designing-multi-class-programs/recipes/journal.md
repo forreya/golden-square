@@ -31,12 +31,13 @@ Diagram made using asciiflow.com:
                │Diary                               │
                │                                    │
                │                                    │
-               │- add(entry)                        │
+               │- add(entry/task)                   │
                │- all_titles                        │
                │- read_entry(entry_title)           │
                │- find_best_entry(wpm, minutes)     │
                │- show_tasks                        │
                │- show_all_numbers                  │
+               │                                    │
                ├────────────────────────────────────┤
                │                                    │
                ▼                                    ▼
@@ -201,7 +202,22 @@ diary.show_all_numbers() # => [['07123456789','07123456710'],['07123459289','021
 
 # Diary x ToDo
 
+# 1
+diary = Diary.new()
+todo1 = ToDo.new('wash my frog')
+todo2 = ToDo.new('drink at Leons')
+diary.add(todo1)
+diary.add(todo2)
+diary.show_tasks() # => [todo1, todo2]
 
+# 2
+diary = Diary.new()
+todo1 = ToDo.new('wash my frog')
+todo2 = ToDo.new('drink at Leons')
+diary.add(todo1)
+diary.add(todo2)
+todo1.mark_done!
+diary.show_tasks() # => [todo2]
 
 ```
 
@@ -226,6 +242,14 @@ entry.count_words() # => 9
 # 4
 entry5 = Entry.new('a number','This is 07123456789. And Ryan 07123456710')
 entry5.show_numbers # => ['07123456789','07123456710']
+
+# ToDo
+
+# 1
+todo = ToDo.new('wash my frog')
+todo.show_task() # => 'wash my frog'
+
+
 ```
 
 ## 5. Implement the Behaviour
