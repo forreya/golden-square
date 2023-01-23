@@ -49,12 +49,26 @@ class Diary
     end
 
     def show_all_numbers
-        all_numbers = []
-        @entries_list.each {
+        # all_numbers = []
+        # @entries_list.each { # entry1, 5, 6
+        #     |entry|
+        #     puts entry.show_numbers.length
+        #     if entry.show_numbers.length > 0
+        #         all_numbers.push(entry.show_numbers.length)
+        #         puts entry.show_numbers.length
+        #         puts "#{entry.show_numbers}"
+        #     end
+        # }
+        # all_numbers
+        all_numbers = @entries_list.map { # entry1, 5, 6
             |entry|
-            all_numbers.push(entry.show_numbers)
+            entry.show_numbers if !entry.show_numbers.empty?
         }
-        all_number
+        # all_numbers = all_numbers.filter{
+        #     |array|
+        #     !array.empty?
+        # }
+        all_numbers
     end
     
 end

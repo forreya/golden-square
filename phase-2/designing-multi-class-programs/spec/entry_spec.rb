@@ -22,5 +22,3 @@ describe Entry do
         expect(entry5.show_numbers).to eq ['07123456789','07123456710']
     end
 end
-
-# 446388162837

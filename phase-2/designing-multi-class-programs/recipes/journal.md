@@ -183,8 +183,21 @@ diary.find_best_entry(1,5) # => entry1
 
 # 6
 diary = Diary.new()
-entry5 = Entry.new('a number','i went on a walk and found a phone number which was +44 638 816 2837')
-diary.show_all_numbers() # => [+44 638 816 2837]
+entry5 = Entry.new('a number','This is 07123456789. And Ryan 07123456710')
+entry6 = Entry.new('a number','This is 07123459289. And Ryan 0212345678')
+diary.add(entry5)
+diary.add(entry6)
+diary.show_all_numbers() # => [['07123456789','07123456710'],['07123459289','0212345678']]
+
+# 7
+diary = Diary.new()
+entry1 = Entry.new('a poem','on this sunny morning, i went on a walk')
+entry5 = Entry.new('a number','This is 07123456789. And Ryan 07123456710')
+entry6 = Entry.new('a number','This is 07123459289. And Ryan 0212345678')
+diary.add(entry1)
+diary.add(entry5)
+diary.add(entry6)
+diary.show_all_numbers() # => [['07123456789','07123456710'],['07123459289','0212345678']]
 
 # Diary x ToDo
 
@@ -211,8 +224,8 @@ entry1 = Entry.new('a poem','on this sunny morning, i went on a walk')
 entry.count_words() # => 9
 
 # 4
-entry5 = Entry.new('a number','i went on a walk and found a phone number which was +44 638 816 2837')
-entry5.show_numbers # => ['+44 638 816 2837']
+entry5 = Entry.new('a number','This is 07123456789. And Ryan 07123456710')
+entry5.show_numbers # => ['07123456789','07123456710']
 ```
 
 ## 5. Implement the Behaviour

@@ -39,10 +39,22 @@ describe Diary do
         expect(result).to eq entry3
     end
 
-    # it "returns an array of all the phone numbers found in every entry" do
-    #     entry5 = Entry.new('a number','i went on a walk and found a phone number which was +446388162837')
-    #     @diary.add(entry5)
-    #     result = @diary.show_all_numbers()
-    #     expect(result).to eq ['+446388162837']
-    # end
+    it "returns an array of all the phone numbers found in every entry" do
+        entry5 = Entry.new('a number','This is 07123456789. And Ryan 07123456710')
+        entry6 = Entry.new('a number','This is 07123459289. And Ryan 0212345678')
+        @diary.add(entry5)
+        @diary.add(entry6)
+        result = @diary.show_all_numbers()
+        expect(result).to eq [['07123456789','07123456710'],['07123459289','0212345678']]
+    end
+
+    it "returns an array of all the phone numbers found in every entry" do
+        entry5 = Entry.new('a number','This is 07123456789. And Ryan 07123456710')
+        entry6 = Entry.new('a number','This is 07123459289. And Ryan 0212345678')
+        @diary.add(@entry1)
+        @diary.add(entry5)
+        @diary.add(entry6)
+        result = @diary.show_all_numbers()
+        expect(result).to eq [['07123456789','07123456710'],['07123459289','0212345678']]
+    end
 end
